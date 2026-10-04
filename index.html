@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="converter-card">
+    <header class="header">
+      <div class="badge"></div>
+      <h1>Unit Converter</h1>
+      <p class="subtitle">Convert seamlessly between Length and Weight units in real-time.</p>
+    </header>
+
+    <main class="form-container">
+      <!-- Category Selector -->
+      <div class="input-group">
+        <label for="categorySelect">Measurement Category</label>
+        <div class="select-wrapper">
+          <select id="categorySelect">
+            <option value="length">Length (Meters, Feet, Inches, Kilometers)</option>
+            <option value="weight">Weight (Kilograms, Pounds, Grams, Ounces)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Conversion Row -->
+      <div class="conversion-grid">
+        <!-- Input Section -->
+        <div class="panel">
+          <label for="fromUnit">From Unit</label>
+          <div class="select-wrapper">
+            <select id="fromUnit"></select>
+          </div>
+          <div class="field-wrapper">
+            <input 
+              type="number" 
+              id="inputValue" 
+              placeholder="0.00" 
+              step="any"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <!-- Swap Button -->
+        <div class="swap-action">
+          <button type="button" id="swapBtn" title="Swap Units" aria-label="Swap units">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 16V4m0 0L3 8m4-4l4 4m6 4v12m0 0l4-4m-4 4l-4-4"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="panel">
+          <label for="toUnit">To Unit</label>
+          <div class="select-wrapper">
+            <select id="toUnit"></select>
+          </div>
+          <div class="field-wrapper output-box">
+            <span id="outputValue">0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Formula / Status Display -->
+      <div class="formula-banner" id="formulaBanner">
+        1 Meter = 3.28084 Feet
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>Live Dynamic Conversion</span> &bull; <span>Supports 4+ units per category</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
